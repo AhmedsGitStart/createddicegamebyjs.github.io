@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Dice Game</title>
+    <style>
+        body{
+            background-color: #00cec9;
+        }
+        h1{
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 50px;
+            text-shadow: 5px 5px 5px red;
+        }
+        h2{
+            text-shadow: 2px 2px 5px red;
+        }
+        #show{
+            text-align: center;
+        }
+        #main{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+        #div3{
+          text-align: center;
+        }
+        button{
+            width: 10vw;
+            padding: 10px 12px;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            color: rgb(5, 5, 5);
+            background-color: #e55039;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 9px black;
+            
+        }
+        button:active {
+            background-color: #eb2f06;
+            box-shadow: 0 5px black;
+            transform: translateY(4px);
+        }
+        .creater{
+            display: flex;
+            justify-content: right;
+            color: white;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- <h1>welocme to our games</h1>
+    <p id="don"></p>
+    <button onclick="ludoGame()">start playing</button>
+    <script>
+      // console.log(Math.random());
+      function ludoGame(){
+        let x=Math.random()*6;
+       let diceValue=Math.floor(x)+1;
+       if(diceValue==1){
+       // alert('you lost');
+        document.getElementById('don').innerHTML='you lost';
+       }else if(diceValue==2){
+        // alert('won 10 rs');
+        document.getElementById('don').innerHTML='won 10 rs';
+       }else if(diceValue==3){
+       // alert('won 20 rs');
+        document.getElementById('don').innerHTML='won 20 rs';
+       }else if(diceValue==4){
+        // alert('won 30 rs');
+        document.getElementById('don').innerHTML='won 30 rs';
+       }else if(diceValue==5){
+        //alert('won 40 rs');
+        document.getElementById('don').innerHTML='won 40 rs';
+       }else if(diceValue==6){
+        //alert('congrats you won jackpot ');
+        document.getElementById('don').innerHTML='congrats you won jackpot ';
+      }
+      }
+      </script> -->
+      
+      <h1>Let's Play Dice Game</h1>
+
+      <h2 id="show">Press the play button ,Then im show you Who is WON!!!</h2>
+
+      <div id="main">
+        <div id="div1">
+            <h2>Player 1</h2>
+            <img src="images/dice1.png" id="img1">
+        </div>
+        <div id="div2">
+            <h2>Player 2</h2>
+            <img src="images/dice6.png" id="img2">
+        </div>
+      </div>
+      <div id="div3">
+      <button class="btn" onclick="ludoGame()">Play</button>
+    </div>
+    <p class="creater">Creted By. Shaikh Khubaib Ahmed</p>
+
+    <script>
+        function ludoGame() {
+            let player1=Math.random()*6;
+            let diceValue1=Math.floor(player1);
+            let player1dice=`images/dice${diceValue1}.png`;
+            document.getElementById('img1').setAttribute('src',player1dice); 
+
+            let player2=Math.random()*6;
+            let diceValue2=Math.floor(player2);
+            let player2dice=`images/dice${diceValue2}.png`;
+            document.getElementById('img2').setAttribute('src',player2dice);
+        if (diceValue1 > diceValue2) {
+
+             document.getElementById('show').innerHTML='Player 1 is won &#128526;';
+
+        }else if(diceValue1 < diceValue2){
+
+            document.getElementById('show').innerHTML='Player 2 is won &#128526;';
+             
+        }else{
+
+            document.getElementById('show').innerHTML='Drow &#128527;';
+
+        }
+        }
+    </script>
+
+
+</body>
+</html>
